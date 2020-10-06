@@ -17,15 +17,15 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/Index.html">Challenge Name Here</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">Taco Cat Challenge</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/Index.html">
+                        <a class="nav-link" href="/index.html">
                             Home
                         </a>
                     </li>
@@ -48,16 +48,29 @@
             </div>
         </div>
     </nav>
-    <h1>Tacocat Challenge</h1>
-
-    <div class="container">
-        <div class="row text-align">
-            <div class="col"><input type="text" id="reverseString" /></div>
-            <div class="col"><button class="btn btn-warning" id="flipBtn">Flip the string</button></div>
-            <div class="col"><span id="reverseOutput"></span></div>
+    
+    <div class="container-fluid">
+        <!--Intro to Palindromes-->
+        <div class="container-fluid">
+            <h2 style="text-align: center">
+                Hmm, I wonder if that's a Palindrome...<br />
+                <small class="text-muted">A palindrome is a word, 
+                phrase, or sequence that reads the same forward and backward. 
+                Try typing a word or sentence below to find out!</small>
+            </h2>
+            <br />
         </div>
-    </div>
 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"><input type="text" id="reverseString" /></div>
+                <div class="col"><button class="btn btn-warning" id="flipBtn">Flip the string</button></div>
+                <div class="col"><span id="reverseOutput"></span></div>
+            </div>
+        </div>
+    
+    
+    </div>
 
 
 
