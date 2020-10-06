@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tacocat Challenge</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Index.html">Challenge Name Here</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Solve.html">Solve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog Post/YouTube Explanation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1>Tacocat Challenge</h1>
+
+    <div class="container">
+        <div class="row text-align">
+            <div class="col"><input type="text" id="reverseString" /></div>
+            <div class="col"><button class="btn btn-warning" id="flipBtn">Flip the string</button></div>
+            <div class="col"><span id="reverseOutput"></span></div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.getElementById("flipBtn").addEventListener("click", function () {
+            //Here is what happens when button is clicked
+            //Step 1
+            //Get data
+            let inputWord = document.getElementById("reverseString").value;
+
+            //step 2
+            //work with aforementioned data
+            let lowerInput = inputWord.toLowerCase();
+            let reverseWord = "";
+            //Franks
+            //sknarF
+            //First is the loop variable followed by a ;
+            //second is the terminator(how many times we're going to loop for)
+            //Third is what happens after each loop ++ = add 1, -- = subtract 1
+            //[] indicates array position
+            // A String is an array of characters
+            //string word = [w][o][r][d]
+            //               0  1  2  3
+            //wITHOUT THE -1 YOU GET INDEX OUT OF RANGE EXCEPTION
+            //
+            //Maybe you want to store four variables, the original input, that reversed, and the lowercase version
+            //of each for comparison
+            for (let loop = inputWord.length - 1; loop >= 0; loop--) {        //often use -1
+                //reverseWord += inputWord.charAt(loop);        How to use this as a string
+                reverseWord += inputWord.charAt(loop);
+
+
+
+            }
+
+            //step 3
+            //spit it back out
+            document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+            if (lowerInput == reverseWord) {
+                alert("You've got a Palindrome!");
+            } else {
+                alert("NOT a Palindrome")
+            }
+
+
+            
+        })
+
+
+    </script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+</body>
+
+</html>
