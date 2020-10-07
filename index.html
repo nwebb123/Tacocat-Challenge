@@ -8,7 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tacocat Challenge</title>
+    <title>Taco Cat Challenge</title>
+
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    <link href="" rel="apple-touch-icon">
+
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,16 +23,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">Taco Cat Challenge</a>
+            <a class="navbar-brand" href="/Index.html">Taco Cat Challenge</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/index.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="/Index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Solve.html">Solve</a>
@@ -36,44 +39,68 @@
                         <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Git</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/nwebb123/Tacocat-Challenge">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog Post/YouTube Explanation</a>
+                        <a class="nav-link" target="_blank" href="https://nickwebbportfolio.netlify.app/">Portfolio</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <div class="container-fluid">
-        <!--Intro to Palindromes-->
-        <div class="container-fluid">
-            <h2 style="text-align: center">
-                Hmm, I wonder if that's a Palindrome...<br />
-                <small class="text-muted">A palindrome is a word, 
-                phrase, or sequence that reads the same forward and backward. 
-                Try typing a word or sentence below to find out!</small>
-            </h2>
-            <br />
-        </div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col"><input type="text" id="reverseString" /></div>
-                <div class="col"><button class="btn btn-warning" id="flipBtn">Flip the string</button></div>
-                <div class="col"><span id="reverseOutput"></span></div>
+
+
+
+    <!--Content-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Hmm, I wonder if that's a Palindrome...</h1>
+                <p class="lead">
+                    A palindrome is a word,
+                    phrase, or sequence that reads the same forward and backward.
+                    Try typing a word or sentence below to find out!
+                </p>
+
             </div>
         </div>
-    
-    
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col"><input type="text" id="reverseString" /></div>
+            <div class="col"><button class="btn btn-warning" id="flipBtn">Flip it!</button></div>
+            <div class="col"><span id="reverseOutput"></span></div>
+        </div>
     </div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  
+
+
+   
+    <!--JS Scripts-->
     <script>
         document.getElementById("flipBtn").addEventListener("click", function () {
             //Here is what happens when button is clicked
@@ -94,7 +121,7 @@
             // A String is an array of characters
             //string word = [w][o][r][d]
             //               0  1  2  3
-            //wITHOUT THE -1 YOU GET INDEX OUT OF RANGE EXCEPTION
+            //wITHOUT THE -1 YOU GET "INDEX OUT OF RANGE" EXCEPTION
             //
             //Maybe you want to store four variables, the original input, that reversed, and the lowercase version
             //of each for comparison
@@ -110,13 +137,13 @@
             document.getElementById("reverseOutput").innerHTML = reverseWord;
 
             if (lowerInput == reverseWord) {
-                alert("You've got a Palindrome!");
+                alert("It's a Palindrome!");
             } else {
-                alert("NOT a Palindrome")
+                alert("Nope, not a palindrome. Try again!")
             }
 
 
-            
+
         })
 
 
