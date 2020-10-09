@@ -17,6 +17,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="mystyles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -50,19 +51,15 @@
     </nav>
 
 
-
-
     <!--Content-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Hmm, I wonder if that's a Palindrome...</h1>
-                <p class="lead">
-                    A palindrome is a word,
-                    phrase, or sequence that reads the same forward and backward.
+                <blockquote class="blockquote">
+                    A palindrome is a word, phrase, or sequence that reads the same forward as it does backwards.<br />
                     Try typing a word or sentence below to find out!
-                </p>
-
+                </blockquote>
             </div>
         </div>
     </div>
@@ -70,8 +67,10 @@
 
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col"><input type="text" id="reverseString" /></div>
-            <div class="col"><button class="btn btn-warning" id="flipBtn">Flip it!</button></div>
+            <div class="col"><input class="lettersOnly" type="text" id="input1" /></div>
+
+            <div class="col"><button class="btn btn-warning btn-lg btn-block" id="flipBtn">Flip it!</button></div>
+
             <div class="col"><span id="reverseOutput"></span></div>
         </div>
     </div>
@@ -79,54 +78,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-  
-
-
-   
     <!--JS Scripts-->
-    <script>
-        document.getElementById("flipBtn").addEventListener("click", function () {
-            //Here is what happens when button is clicked
-            //Step 1
-            //Get data
-            let inputWord = document.getElementById("reverseString").value;
 
-            //step 2
-            //work with aforementioned data
+    <script>
+        //This is saying "document, grab element by id(button) and listen for when it is clicked, 
+        //and when clicked, execute this anonymous function
+        document.getElementById("flipBtn").addEventListener("click", function () {
+
+            let inputWord = document.getElementById("input1").value;
             let lowerInput = inputWord.toLowerCase();
             let reverseWord = "";
-            //Franks
-            //sknarF
-            //First is the loop variable followed by a ;
-            //second is the terminator(how many times we're going to loop for)
-            //Third is what happens after each loop ++ = add 1, -- = subtract 1
-            //[] indicates array position
-            // A String is an array of characters
-            //string word = [w][o][r][d]
-            //               0  1  2  3
-            //wITHOUT THE -1 YOU GET "INDEX OUT OF RANGE" EXCEPTION
-            //
-            //Maybe you want to store four variables, the original input, that reversed, and the lowercase version
-            //of each for comparison
-            for (let loop = inputWord.length - 1; loop >= 0; loop--) {        //often use -1
-                reverseWord += inputWord.charAt(loop);
+
+            for (let i = inputWord.length - 1; i >= 0; i--) {       
+                reverseWord += inputWord.charAt(i);
 
 
 
@@ -137,14 +101,32 @@
             document.getElementById("reverseOutput").innerHTML = reverseWord;
 
             if (lowerInput == reverseWord) {
-                alert("It's a Palindrome!");
+                Swal.fire("It's a Palindrome!");
             } else {
-                alert("Nope, not a palindrome. Try again!")
+                Swal.fire("Nope, not a palindrome. Try again!")
             }
 
 
 
         })
+
+
+
+        document.querySelectorAll(".lettersOnly").addEventListener("keydown", function (evt) {
+
+            let character = (evt.which) ? evt.which : evt.keyCode;    //Turnery Operator; this is more explicit; I'm assigning some value to the variable character. That value will either be e.which or e.keyCode depending on whether e.which is
+
+            console.log(character)
+            if (character >= 97 && character <= 122 || character >= 65 && character <= 90 || character == 8) {
+                return true;
+            }
+            else {
+                evt.preventDefault();
+                return false;
+            }
+
+
+        });
 
 
     </script>
@@ -153,6 +135,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>
