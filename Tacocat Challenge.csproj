@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code.html" />
+    <Content Include="img\favicon.png" />
     <Content Include="img\Taco Favicon.svg" />
     <Content Include="mystyles.css" />
     <Content Include="Solve.html" />
