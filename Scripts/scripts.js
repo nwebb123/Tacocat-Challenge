@@ -3,7 +3,7 @@
 document.getElementById("flipBtn").addEventListener("click", function () {
 
     let inputWord = document.getElementById("input1").value;
-    let lowerInput = inputWord.toLowerCase();
+    let lowerInput = inputWord.toLowerCase().replace(/\s|\'|\"/g, ''); //Regex that ensures any input is made lowercase
     let reverseWord = "";
 
     for (let i = inputWord.length - 1; i >= 0; i--) {
@@ -24,7 +24,7 @@ document.getElementById("flipBtn").addEventListener("click", function () {
 })
 
 
-
+//Adding validation to ensure the user only enters appropriate characters for the Palindrome
 document.querySelectorAll(".lettersOnly").addEventListener("keydown", function (evt) {
 
     let character = (evt.which) ? evt.which : evt.keyCode;    //Turnery Operator; this is more explicit; I'm assigning some value to the variable character. That value will either be e.which or e.keyCode depending on whether e.which is
